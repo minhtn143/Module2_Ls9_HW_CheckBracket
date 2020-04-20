@@ -6,7 +6,7 @@ const BRACES = 3;
 
 function checkBracket($string)
 {
-    $newStack = new Stack();
+    $newStack = new SplStack();
     for ($i = 0; $i < strlen($string); $i++) {
         switch ($string[$i]) {
             case "(":
@@ -19,16 +19,28 @@ function checkBracket($string)
                 $newStack->push(BRACES);
                 break;
             case ")":
-                if ($newStack->pop() != ROUND_BRACKETS)
+                if($newStack->isEmpty()){
                     return false;
+                }else{
+                    if ($newStack->pop() != ROUND_BRACKETS)
+                        return false;
+                }
                 break;
             case "]":
-                if ($newStack->pop() != SQUARE_BRACKETS)
+                if($newStack->isEmpty()){
                     return false;
+                }else{
+                    if ($newStack->pop() != SQUARE_BRACKETS)
+                        return false;
+                }
                 break;
             case "}":
-                if ($newStack->pop() != BRACES)
+                if($newStack->isEmpty()){
                     return false;
+                }else{
+                    if ($newStack->pop() != BRACES)
+                        return false;
+                }
                 break;
         }
     }

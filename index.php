@@ -1,8 +1,8 @@
 <?php
 include "Function.php";
-include "Stack.php";
+//include "Stack.php";
 
-$string1 = "8 * 2 / ( 9 - 2)";
+$string1 = "8 * 2 /  (9 - 2)";
 $string2 = "7 - 3 / 5 * ( 6 +4 ))";
 $string3 = "({ (4 - 6 * 7";
 $string4 = "(13*43+[23+32]-{32+2*4})";
