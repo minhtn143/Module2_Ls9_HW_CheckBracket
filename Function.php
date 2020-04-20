@@ -1,7 +1,5 @@
 <?php
 
-const FALSE_MESSAGE = "Incorrect";
-const TRUE_MESSAGE = "Correct";
 const ROUND_BRACKETS = 1;
 const SQUARE_BRACKETS = 2;
 const BRACES = 3;
@@ -22,19 +20,19 @@ function checkBracket($string)
                 break;
             case ")":
                 if ($newStack->pop() != ROUND_BRACKETS)
-                    return FALSE_MESSAGE;
+                    return false;
                 break;
             case "]":
                 if ($newStack->pop() != SQUARE_BRACKETS)
-                    return FALSE_MESSAGE;
+                    return false;
                 break;
             case "}":
                 if ($newStack->pop() != BRACES)
-                    return FALSE_MESSAGE;
+                    return false;
                 break;
         }
     }
-    return TRUE_MESSAGE;
+    return $newStack->isEmpty();
 }
 
 
